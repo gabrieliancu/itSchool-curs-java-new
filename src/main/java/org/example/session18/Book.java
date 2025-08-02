@@ -114,7 +114,7 @@ class LibraryDemo {
         System.out.println("-----------------------------------");
         Map<Book, Integer> inventory = new HashMap<>();
         inventory.put(b1,10);
-        inventory.put(b3,4);
+        inventory.put(b3,5);
         inventory.put(b2,15);
         System.out.println(inventory);
         for(Map.Entry<Book, Integer> entry: inventory.entrySet()){
