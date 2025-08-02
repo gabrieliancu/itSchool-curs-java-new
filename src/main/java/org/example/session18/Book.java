@@ -1,5 +1,7 @@
 package org.example.session18;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Book {
@@ -85,7 +87,7 @@ class LibraryDemo {
     public static void main(String[] args) {
         Book b1 =new Book("Clean code","Robert",464, "123456");
         Book b2 =new Book("Clean code","Robert",464, "123456");
-        Book b3 =new Book("JJava","osh",422, "987654");
+        Book b3 =new Book("Java","Josh",422, "987654");
         System.out.println("b1 equal b2? " +b1.equals(b2));
         System.out.println("b1 equal b3? " +b1.equals(b3));
 
@@ -99,6 +101,28 @@ class LibraryDemo {
 
         Box<Book> bookBox = new Box<>();
         bookBox.setItem(b1);
+        System.out.println("Box eith Book: "+bookBox.getItem());
+
+        System.out.println("-----------------------------------");
+        Pair<String, Integer> bookScore= new Pair<>("Clean Code", 9);
+        System.out.println("Book score: "+bookScore.getValue()+bookScore.getKey());
+
+        Book b4 = new Book("Apocalipsa", "S.K", 1000, "123123");
+        Pair<String, Book> favoriteBook= new Pair<>("Apocalipsa", b4);
+        System.out.println("My favorite book: "+favoriteBook);
+
+        System.out.println("-----------------------------------");
+        Map<Book, Integer> inventory = new HashMap<>();
+        inventory.put(b1,10);
+        inventory.put(b3,4);
+        inventory.put(b2,15);
+        System.out.println(inventory);
+        for(Map.Entry<Book, Integer> entry: inventory.entrySet()){
+            System.out.println(entry.getKey() + " cu hascode "+ entry.getKey().hashCode()+ " are nr de carti "+entry.getValue());
+        }
+
+
+
     }
 
 
